@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import { Dashboard } from "./modules/Dashboard/pages/Dashboard";
 import { ErrorPage } from "./modules/ErrorPage/pages/ErrorPage";
-import { ErrorDashboardPage } from "./modules/ErrorPage/pages/ErrorDashboardPage";
+import { Members } from "./modules/Members/pages/Members";
 
 const router = createBrowserRouter([
   {
@@ -16,12 +16,15 @@ const router = createBrowserRouter([
     // errorElement: <ErrorPage/>
     children:[
       {
-        path: "/dashboard",
+        path: "/",
         element: <Dashboard />,
+      },
+      {
+        path: "/members",
+        element: <Members />,
       },
     ]
   },
-  
 ]);
 
 function App() {
