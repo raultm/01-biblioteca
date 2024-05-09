@@ -1,15 +1,18 @@
+import { FaUsers } from "react-icons/fa"
+import { MdDashboard } from "react-icons/md"
+
 export const SideBar = () => {
 
   const menuItems = [
     {
       name: "Dashboard",
       link: "/",
-      icon: "icono"
+      icon: <MdDashboard/>
     },
     {
       name: "Socios",
       link: "/members",
-      icon: "icono"
+      icon: <FaUsers />
     },
   ]
 
