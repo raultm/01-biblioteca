@@ -1,5 +1,6 @@
 import { FaUsers } from "react-icons/fa"
 import { MdDashboard } from "react-icons/md"
+import { NavLink } from "react-router-dom"
 
 export const SideBar = () => {
 
@@ -25,16 +26,14 @@ export const SideBar = () => {
         <nav className="mt-6">
           <div>
             {menuItems.map(item => (
-            <a
+            <NavLink
               key={item.link}
               className="flex items-center justify-start w-full p-2 pl-6 my-2 text-gray-800 transition-colors duration-200 border-l-4 border-purple-500 dark:text-white"
-              href={item.link}
+              to={item.link}
             >
-              <span className="text-left">
-                {item.icon}
-              </span>
+              <span className="text-left">{item.icon}</span>
               <span className="mx-2 text-sm font-normal">{item.name}</span>
-            </a>
+            </NavLink>
             ))}
           </div>
         </nav>
