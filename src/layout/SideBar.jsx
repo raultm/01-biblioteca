@@ -28,7 +28,12 @@ export const SideBar = () => {
             {menuItems.map(item => (
             <NavLink
               key={item.link}
-              className="flex items-center justify-start w-full p-2 pl-6 my-2 text-gray-800 transition-colors duration-200 border-l-4 border-purple-500 dark:text-white"
+              className={({isActive}) => 
+                isActive ?
+                "flex items-center justify-start w-full p-2 pl-6 my-2 text-gray-800 transition-colors duration-200 border-l-4 border-purple-500 dark:text-white":
+                "flex items-center justify-start w-full p-2 pl-6 my-2 text-gray-800 transition-colors duration-200 border-l-4 border-purple-500 dark:text-white"
+              }
+              //className="flex items-center justify-start w-full p-2 pl-6 my-2 text-gray-800 transition-colors duration-200 border-l-4 border-purple-500 dark:text-white"
               to={item.link}
             >
               <span className="text-left">{item.icon}</span>
