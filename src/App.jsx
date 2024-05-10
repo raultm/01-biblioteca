@@ -8,6 +8,7 @@ import {
 import { Dashboard } from "./modules/Dashboard/pages/Dashboard";
 import { ErrorPage } from "./modules/ErrorPage/pages/ErrorPage";
 import { Members } from "./modules/Members/pages/Members";
+import { NewMember } from "./modules/Members/pages/NewMember";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/members",
         element: <Members />,
+      },
+      {
+        path: "/members/create",
+        element: <NewMember />,
       },
     ]
   },
