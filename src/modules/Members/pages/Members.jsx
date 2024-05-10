@@ -14,12 +14,11 @@ export const Members = () => {
 
   const fetchMembers = async () => setMembers(await api.members())
 
-  useEffect(()=> {
+  useEffect(() => {
     fetchMembers()
-  },[])
+  }, [])
 
   return (
-
     <div className="container max-w-3xl px-4 mx-auto sm:px-8">
       <div className="py-8">
         <div className="flex flex-row justify-between w-full mb-1 sm:mb-0">
@@ -42,7 +41,7 @@ export const Members = () => {
           </div>
         </div>
         <div className="px-4 py-4 -mx-4 overflow-x-auto sm:-mx-8 sm:px-8">
-          <div className="inline-block min-w-full overflow-hidden rounded-lg shadow">
+          <div className="inline-block min-w-full  rounded-lg shadow">
             <table className="min-w-full leading-normal">
               <thead>
                 <tr>
@@ -81,7 +80,7 @@ export const Members = () => {
                     </td>
                     <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
                       <p className="text-gray-900 whitespace-no-wrap">
-                      {member.email}
+                        {member.email}
                       </p>
                     </td>
                     {/* <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">

@@ -8,18 +8,9 @@ export const NewMember = () => {
         email: ""
     })
     
-    const saveMember = async () => {
-        api.addMember(newMember)
-    }
+    const saveMember = async () => console.log(await api.addMember(newMember))
 
-    const handleChange = (event) => {
-        // console.log(event.target.name);
-        // console.log(event.target.value);
-        setNewMember({
-            ...newMember,
-            [event.target.name]:event.target.value
-        })
-    }
+    const handleChange = (event) => setNewMember({...newMember,[event.target.name]:event.target.value })
 
     const handleSubmit = (e) => {
         e.preventDefault()

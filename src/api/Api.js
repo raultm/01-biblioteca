@@ -1,13 +1,15 @@
+const API_URL = "http://localhost:8090";
+
 export let api = {
 
     members: async () => {
-        let response = await fetch(`http://localhost:8090/members`)
+        let response = await fetch(`${API_URL}/members`)
         return await response.json()
     },
 
     addMember: async (data) => {
         console.log(data)
-        let response = await fetch(`http://localhost:8090/members`, {
+        let response = await fetch(`${API_URL}/members`, {
             method: 'POST', 
             headers: {
                 "Content-Type": "application/json",
