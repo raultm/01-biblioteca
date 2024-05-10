@@ -9,6 +9,7 @@ import { Dashboard } from "./modules/Dashboard/pages/Dashboard";
 import { ErrorPage } from "./modules/ErrorPage/pages/ErrorPage";
 import { Members } from "./modules/Members/pages/Members";
 import { NewMember } from "./modules/Members/pages/NewMember";
+import { Toaster } from "sonner";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,7 @@ function App() {
 
   return (
     <>
+      <Toaster richColors position="top-center"/>
       <RouterProvider router={router} />
     </>
   )

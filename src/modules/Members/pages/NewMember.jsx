@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { api } from "../../../api/Api"
+import { useNavigate } from "react-router-dom"
+import { toast } from "sonner"
 
 export const NewMember = () => {
 
@@ -8,13 +10,21 @@ export const NewMember = () => {
         email: ""
     })
     
+    const navigate = useNavigate()
+
     const saveMember = async () => console.log(await api.addMember(newMember))
 
     const handleChange = (event) => setNewMember({...newMember,[event.target.name]:event.target.value })
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        saveMember()
+        if(newMember.username.length > 0 && newMember.email.length > 0){
+            saveMember()
+            toast.success("Usuario Guardado")
+            navigate("/members")
+        }else{
+            alert("warning!")
+        }
     }
 
     return (
