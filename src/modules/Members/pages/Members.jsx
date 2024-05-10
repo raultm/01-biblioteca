@@ -4,19 +4,11 @@ import { useEffect, useState } from "react";
 
 export const Members = () => {
 
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate("/members/create")
-  }
-
   const [members, setMembers] = useState([])
-
+  const navigate = useNavigate();
+  const handleClick = () => navigate("/members/create")
   const fetchMembers = async () => setMembers(await api.members())
-
-  useEffect(() => {
-    fetchMembers()
-  }, [])
+  useEffect(() => { fetchMembers() }, [])
 
   return (
     <div className="container max-w-3xl px-4 mx-auto sm:px-8">

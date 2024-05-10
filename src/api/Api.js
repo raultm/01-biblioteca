@@ -1,23 +1,15 @@
 const API_URL = "http://localhost:8090";
 
+const backend = {
+    get: async (endpoint) => await (await fetch(`${API_URL}${endpoint}`)).json(),
+    post: async (endpoint, data) => await (await fetch(`${API_URL}${endpoint}`, {
+        method: 'POST',
+        headers: { "Content-Type": "application/json",},
+        body: JSON.stringify(data)
+    }))
+}
+
 export let api = {
-
-    members: async () => {
-        let response = await fetch(`${API_URL}/members`)
-        return await response.json()
-    },
-
-    addMember: async (data) => {
-        console.log(data)
-        let response = await fetch(`${API_URL}/members`, {
-            method: 'POST', 
-            headers: {
-                "Content-Type": "application/json",
-                "accept": "application/hal+json"
-            },
-            body: JSON.stringify(data)
-        })
-        return await response.json()
-    },
-
+    members: async () => backend.get("/members"),
+    addMember: async (data) => backend.get("/members", data),
 }
